@@ -1,0 +1,13 @@
+//@version=4
+study(title="SMA", overlay=true)
+
+// Calculate moving averages
+fastMA = sma(close, 7)
+slowMA = sma(close, 33)
+
+// Plot values
+plot(series=fastMA, color=color.lime, linewidth=2)
+plot(series=slowMA, color=color.fuchsia, linewidth=2)
+
+// Colour background when moving averages cross
+bgcolor(color=cross(fastMA, slowMA) ? color.teal : na)

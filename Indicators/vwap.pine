@@ -1,2 +1,11 @@
 //@version=4
-study("VWAP")
+study("VWAP" , overlay=true)
+
+// Calculate moving average
+vwapValue = vwap(close)
+
+// Plot value
+plot(series=vwapValue, color=color.blue, linewidth=2)
+
+// Colour background when price crosses average
+bgcolor(color=cross(close, vwapValue) ? color.gray : na, transp=85)
