@@ -1,5 +1,5 @@
 //@version=4
-study("MACD", overlay=true)
+study("MACD", overlay=false)
 fast = 12, slow = 26
 fastMA = ema(close, fast)
 slowMA = ema(close, slow)
